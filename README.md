@@ -17,10 +17,14 @@
 
 *You can add screenshots here after running the app locally, for example:*
 
-![Dashboard](screenshots/dashboard.png)  
-![Add User](Screenshot 2025-09-06 150202.png)  
-![View Users](screenshots/view_users.png)
-
+![Dashboard](screenshot/dashboard.png)  
+![Add User](screenshot/add_user.png)  
+![View Users](screenshot/view_user.png)
+![task page ](screenshot/Task_page.png)
+![assigning task](screenshot/assigning_task.png)
+![statusofthetask](screenshot/statusofthetask.png)
+![status updating](screenshot/status_updating.png)
+![delete user](screenshot/delete_user.png)
 
 ## Installation
 
