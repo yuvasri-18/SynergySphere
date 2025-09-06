@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4 text-center">Dashboard</h2>
+
+<div id="chart-data" data-total="{{ users_count | default(0) }}" data-active="{{ active_users_count | default(0) }}"></div>
+<canvas id="userChart"></canvas>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const chartDiv = document.getElementById('chart-data');
+    const totalUsers = parseInt(chartDiv.dataset.total);
+    const activeUsers = parseInt(chartDiv.dataset.active);
+    const inactiveUsers = totalUsers - activeUsers;
+
+    const ctx = document.getElementById('userChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Active', 'Inactive'],
+            datasets: [{
+                data: [activeUsers, inactiveUsers],
+                backgroundColor: ['#28a745', '#6c757d']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { position: 'bottom' } }
+        }
+    });
+});
+</script>
+{% endblock %}
